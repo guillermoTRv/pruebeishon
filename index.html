@@ -15,7 +15,14 @@
 <script src="js/jquery.js"></script>
 <script>
 	$("#uno").click(function(){
-		$(".content").load("uno.html")
+		$.ajax({
+			type:"GET",
+			url:"https://gruposelta.com.mx/security/prueba.php?memo=chiqui-memo",
+			seccess:function(data){
+				$(".content").html(data)
+			}
+		})
+		//$(".content").load("uno.html")
 	})
 	$("#two").click(function(){
 		$(".content").load("two.html")
