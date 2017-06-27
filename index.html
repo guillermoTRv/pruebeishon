@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>app prueba mens</title>
+</head>
+<body>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. A praesentium porro, pariatur beatae perspiciatis nesciunt itaque placeat optio iste aliquam nulla harum, incidunt numquam sunt! Impedit rem adipisci, suscipit molestiae.
+	<button id="uno">Vamoa a uno</button>
+	<button id="two">Vamo a two</button>
+	<button id="tres">Vamo a tres</button>
+	<div class="content"></div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script>
+	$("#uno").click(function(){
+		$(".content").load("uno.html")
+	})
+	$("#two").click(function(){
+		$(".content").load("two.html")
+	})
+	$("#tres").click(function(){
+		$(".content").load("tres.html")
+	})
+</script>
