@@ -20,12 +20,12 @@ function connect(e)
 {
 var term= {button:e};
 $.ajax({
-url:'https://gruposelta.com.mx/prueba.php',
+url:'https://gruposelta.com.mx/security/prueba.php',
 type:'POST',
 data:term,
 dataType:'json',
 error:function(jqXHR,text_status,strError){
-alert(“no connection”);},
+alert("no connection");},
 timeout:60000,
 success:function(data){
 $("#result").html("");
