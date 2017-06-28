@@ -5,40 +5,33 @@
 	<title>app prueba mens</title>
 </head>
 <body>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. A praesentium porro, pariatur beatae perspiciatis nesciunt itaque placeat optio iste aliquam nulla harum, incidunt numquam sunt! Impedit rem adipisci, suscipit molestiae.
-	<button id="uno">Vamoa a uno</button>
-	<button id="two">Vamo a two</button>
-	<button id="tres">Vamo a tres</button>
-	<div class="content"></div>
+	<div>
+	<div><center><b>Bikes or Cars</b></center>
+	<center><input onclick="connect(this.value)" type="button" value="cars" /></center>
+	<center><input onclick="connect(this.value)" type="button" value="bikes" /></center>
+	<center><b>Results</b></center>
+	<ul id="result"></ul></div>
+	</div>
 </body>
 </html>
 <script src="js/jquery.js"></script>
-<script>
-	
-
-
-	$("#uno").click(function(){
-		$.ajax({
-			type:"GET",
-			url:"https://gruposelta.com.mx/security/prueba.php?memo=chiqui-ssssmemo",
-			success:function(data){
-				$(".content").html(data)
-			}
-		})
-		//$(".content").load("uno.html")
-	})
-	
-
-
-
-
-
-
-
-	$("#two").click(function(){
-		$(".content").load("two.html")
-	})
-	$("#tres").click(function(){
-		$(".content").load("tres.html")
-	})
+<script type="text/javascript">
+function connect(e)
+{
+var term= {button:e};
+$.ajax({
+url:'https://gruposelta.com.mx/prueba.php',
+type:'POST',
+data:term,
+dataType:'json',
+error:function(jqXHR,text_status,strError){
+alert(“no connection”);},
+timeout:60000,
+success:function(data){
+$("#result").html("");
+for(var i in data){
+$("#result").append("<li>"+data[i]+"</li>");
+}
+}
+});}
 </script>
